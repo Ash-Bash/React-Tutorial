@@ -7,20 +7,19 @@ import Header from "./Header";
 export default class App extends React.Component {
     constructor() {
         super();
-        this.name = "It's Ash-Bash"
+        this.state = {
+            title: "Welcome",
+        };
     }
-
-    getVal() {
-        return 2 + 2;
-    }
-
     render() {
-        const helloWorldText = "Hello, World!!!!";
+        setTimeout(() => {
+            this.setState({
+                title: "Welcome Ashley!!",
+            });
+        }, 2000);
         return (
             <div>
-                <Header />
-                <h1>{helloWorldText}, 2 + 2 Equals {this.getVal()}</h1>
-                <h2>{this.name}</h2>
+                <Header title={this.state.title} />
                 <Footer />
             </div>
         );
